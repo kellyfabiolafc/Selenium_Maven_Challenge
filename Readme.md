@@ -10,7 +10,7 @@ El proyecto está organizado de la siguiente manera:
 ```
 Selenium_Maven_Challenge
 ├── pom.xml
-├── README_Selenium_SauceDemo.md
+├── README.md
 └── src
     └── test
         └── java
