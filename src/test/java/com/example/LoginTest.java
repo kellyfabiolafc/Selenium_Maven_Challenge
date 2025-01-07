@@ -2,7 +2,7 @@ package com.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import com.example.pages.InventoryPage;
+// import com.example.pages.InventoryPage;
 import com.example.utils.BaseTest;
 
 public class LoginTest extends BaseTest {
@@ -45,7 +45,7 @@ public class LoginTest extends BaseTest {
     public void testLogout() {
         loginPage.login("standard_user", "secret_sauce");
 
-        InventoryPage inventoryPage = new InventoryPage(driver);
+        // InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.logout();
         assertEquals("https://www.saucedemo.com/", driver.getCurrentUrl());
     }

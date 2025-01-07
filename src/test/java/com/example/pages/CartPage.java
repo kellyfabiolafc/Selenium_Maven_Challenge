@@ -87,25 +87,33 @@ public class CartPage {
     public void continueShopping() {
         continueShoppingButton.click();
     }
+
     /**
- * Elimina un producto específico del carrito basado en su nombre.
- */
-public void removeProductFromCart(String productName) {
-    for (int i = 0; i < productNamesInCart.size(); i++) {
-        if (productNamesInCart.get(i).getText().equalsIgnoreCase(productName)) {
-            // Hacer clic en el botón de eliminar para el producto encontrado
-            removeButtons.get(i).click();
-            break; // Salir del bucle después de eliminar el producto
+     * Elimina un producto específico del carrito basado en su nombre.
+     */
+    public void removeProductFromCart(String productName) {
+        for (int i = 0; i < productNamesInCart.size(); i++) {
+            if (productNamesInCart.get(i).getText().equalsIgnoreCase(productName)) {
+                // Hacer clic en el botón de eliminar para el producto encontrado
+                removeButtons.get(i).click();
+                break; // Salir del bucle después de eliminar el producto
+            }
         }
     }
-}
 
-/**
- * Verifica si el carrito está vacío.
- */
-public boolean isCartEmpty() {
-    return cartItems.isEmpty(); // Si no hay productos, el carrito está vacío
-}
+    /**
+     * Verifica si el carrito está vacío.
+     */
+    // public boolean isCartEmpty() {
+    // return cartItems.isEmpty(); // Si no hay productos, el carrito está vacío
+    // }
+    /**
+     * Verifica si el carrito está vacío después de eliminar un producto.
+     */
+    public boolean isCartEmptyAfterRemoval() {
+        // Refresca la lista de elementos en el carrito
+        List<WebElement> updatedCartItems = driver.findElements(By.cssSelector(".cart_item"));
+        return updatedCartItems.isEmpty(); // Si la lista está vacía, el carrito quedó vacío
+    }
 
-    
 }
